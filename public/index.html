@@ -20,7 +20,6 @@
               <th>Cash Flow Year 1</th>
               <th>Cash Flow Year 2</th>
               <th>Cash Flow Year 3</th>
-              <th></th>
             </tr>
           </thead>
           <tbody>
@@ -30,11 +29,12 @@
               <td><input class="form-control" ng-model="npv.cf1"></td>
               <td><input class="form-control" ng-model="npv.cf2"></td>
               <td><input class="form-control" ng-model="npv.cf3"></td>
-            </tr>
+            </tr> 
           </tbody>
         </table>  
         <button class="btn btn-primary" ng-click="calculateNPV()">Submit</button>
       </div> <!-- NpvCtrl -->
+      <div id="results"></div>
     </div>
   </body>
 </html>
