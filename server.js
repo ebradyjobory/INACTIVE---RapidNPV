@@ -1,8 +1,6 @@
 var express = require('express');
 var bodyParser = require('body-parser');
-var mongojs = require('mongojs');
 
-var db = mongojs("npvdb", ["npvs"])
 var app = express();
 
 
@@ -19,10 +17,10 @@ app.get('/npvs', function (req, res) {
 });
 
 app.post('/npvs', function (req, res) {
-  db.npvs.insert(req.body, function(err, data){
-    console.log(data);
-    res.end(JSON.stringify(data));
-  }); 
+  // db.npvs.insert(req.body, function(err, data){
+  //   console.log(data);
+  //   res.end(JSON.stringify(data));
+  // }); 
 });
 
 

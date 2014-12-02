@@ -16,6 +16,7 @@
       <p>Please fill out the information below</p>
 
       <div ng-controller="NpvCtrl">
+      <form name="npvForm" ng-submit="submitForm(npvForm.$valid)" novalidate>
         <table class="table">
           <thead>
             <tr>
@@ -28,9 +29,9 @@
           </thead>
           <tbody>
             <tr>
-              <td><input placeholder="e.g, 10 for 10%" class="form-control" ng-model="npv.rate"></td>
-              <td><input placeholder="Always negative" class="form-control" ng-model="npv.cf0"></td>
-              <td><input class="form-control" ng-model="npv.cf1"></td>
+              <td><input placeholder="e.g, 10 for 10%" class="form-control" ng-model="npv.rate" required></td>
+              <td><input placeholder="Always negative" class="form-control" ng-model="npv.cf0" required></td>
+              <td><input class="form-control" ng-model="npv.cf1" required></td>
               <td><input class="form-control" ng-model="npv.cf2"></td>
               <td><input class="form-control" ng-model="npv.cf3"></td>
             </tr> 
