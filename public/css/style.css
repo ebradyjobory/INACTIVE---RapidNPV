@@ -21,7 +21,9 @@ th {
 }
 
 button{
-  width: 100%;
+  width: 50%;
+  margin: auto 25%;
+  border-radius: 0px !important;
 }
 
 #status {

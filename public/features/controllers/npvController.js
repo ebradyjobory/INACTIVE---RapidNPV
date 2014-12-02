@@ -1,4 +1,13 @@
+angular.module('RapidNPV', []);
+
 function NpvCtrl ($scope, $http){
+
+  $scope.submitForm = function(isValid) {
+    console.log('called from submitForm', isValid)
+    // check to make sure the form is completely valid
+   
+  };
+
 
   var npvFunction = function (rate, cf0) {
     console.log('called', arguments)
@@ -20,8 +29,8 @@ function NpvCtrl ($scope, $http){
     var cf3 = $scope.npv.cf3;
 
     var npvValue = npvFunction(Number(rate), Number(cf0), Number(cf1), Number(cf2), Number(cf3));
-
-    var message = 'For given discount rate '+rate+'%, cashflow for first year '+cf0+' cashflow for second year '+cf1+' cashflow for third year '+cf2+' , and cashflow for fourth year '+cf3+': the Net Present Value (NPV) is '+npvValue+'.' ;
+    var npvValueToMoney = npvValue.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+    var message = 'The Net Present Value (NPV) is $'+npvValueToMoney+'.' ;
     
     $('#results').html(message);
 
