@@ -1,8 +1,8 @@
 {
-  "name": "shortly-angular",
+  "name": "RapidNPV",
   "version": "0.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "server.js",
   "scripts": {
     "test": "karma start --browsers PhantomJS"
   },
