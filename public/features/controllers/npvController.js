@@ -3,12 +3,10 @@ angular.module('RapidNPV', []);
 function NpvCtrl ($scope, $http){
 
   $scope.submitForm = function(isValid) {
-    console.log('called from submitForm', isValid)
-    // check to make sure the form is completely valid
-   
+    console.log('called from submitForm', isValid) 
   };
-
-
+  
+  // the NPV function
   var npvFunction = function (rate, cf0) {
     console.log('called', arguments)
     var rate = rate/100, npv = cf0;
@@ -35,13 +33,18 @@ function NpvCtrl ($scope, $http){
     $('#results').html(message);
 
     if (npvValue > 0) {
+      $('#status').removeClass('alert alert-caution');
       $('#status').removeClass('alert alert-danger');
-      $('#status').html('Worth it!').addClass('alert alert-success');
-    } else {
+      $('#status').html('Worth It!').addClass('alert alert-success');
+    } else if (npvValue === 0) {
+      $('#status').removeClass('alert alert-danger');
       $('#status').removeClass('alert alert-success');
-      $('#status').html('Not Worth it!').addClass('alert alert-danger');
+      $('#status').html('Worth It! \n The investment earns a rate of return equal to the discount rate').addClass('alert alert-warning');
+    } else {
+      $('#status').removeClass('alert alert-caution');
+      $('#status').removeClass('alert alert-success');
+      $('#status').html('Not Worth It!').addClass('alert alert-danger');
     }
-
   };
 
   $scope.renderNPV = function (response){

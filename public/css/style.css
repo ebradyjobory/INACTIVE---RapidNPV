@@ -4,7 +4,17 @@ body {
 }
 
 th {
-  text-align: center !important;
+  padding-left: 30px !important;
+}
+
+td:before {
+  content: '$';
+  position: absolute;
+  margin-top: 7px;
+  margin-left: 5px;
+}
+td:nth-child(1):before {
+  content: '' !important;
 }
 
 #results {
@@ -31,4 +41,8 @@ button{
   width: 50%;
   margin: auto;
   text-align: center;
+}
+
+.form-control {
+  width: 80% !important;
 }
