@@ -19,8 +19,6 @@ app.get('/npvs', function (req, res) {
 });
 
 app.post('/npvs', function (req, res) {
-  // var npv = req.body;
-  // console.log(npv);
   db.npvs.insert(req.body, function(err, data){
     console.log(data);
     res.end(JSON.stringify(data));

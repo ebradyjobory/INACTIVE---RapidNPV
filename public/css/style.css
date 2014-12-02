@@ -1,0 +1,28 @@
+body {
+  font-family: 'Droid Serif', serif; 
+  background-color: #ecf0f1;
+}
+
+#results {
+  font-size: 1.2em;
+  width: 50%;
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.logo {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+button{
+  width: 100%;
+}
+
+#status {
+  margin-top: 10%;
+  width: 50%;
+  margin: auto;
+  text-align: center;
+}

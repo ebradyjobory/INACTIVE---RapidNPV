@@ -20,9 +20,18 @@ function NpvCtrl ($scope, $http){
     var cf3 = $scope.npv.cf3;
 
     var npvValue = npvFunction(Number(rate), Number(cf0), Number(cf1), Number(cf2), Number(cf3));
-    console.log('npvValue', npvValue);
+
+    var message = 'For given discount rate '+rate+'%, cashflow for first year '+cf0+' cashflow for second year '+cf1+' cashflow for third year '+cf2+' , and cashflow for fourth year '+cf3+': the Net Present Value (NPV) is '+npvValue+'.' ;
     
-    
+    $('#results').html(message);
+
+    if (npvValue > 0) {
+      $('#status').removeClass('alert alert-danger');
+      $('#status').html('Worth it!').addClass('alert alert-success');
+    } else {
+      $('#status').removeClass('alert alert-success');
+      $('#status').html('Not Worth it!').addClass('alert alert-danger');
+    }
 
   };
 
